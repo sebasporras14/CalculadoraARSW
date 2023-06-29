@@ -5,9 +5,8 @@ Usando conocimientos con el framework spring MVC(modelo vista controlador), java
 
 ## diseño calculadora
 
-we run the taste made to check the functionality of the methods done and got the result:
 
-![class diagram](https://github.com/sebasporras14/CalculadoraARSW/blob/master/images/calculadora.png)
+![class diagram](https://github.com/sebasporras14/CalculadoraARSW/blob/master/imagenes/calculadora.png)
 
 
 ## Built With
