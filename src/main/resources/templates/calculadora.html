@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <script>
+        function submitForm(action, params) {
+            const form = document.createElement('form');
+            form.method = 'get';
+            form.action = action;
+
+            // Agregar los parámetros como campos ocultos en el formulario
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = params.split('=')[0];
+            input.value = params.split('=')[1];
+            form.appendChild(input);
+
+            document.body.appendChild(form);
+        }
+    </script>
+    <style>
+        body {
+            background-size: contain;
+            backdrop-filter: blur(5px);
+            font-family: Arial, sans-serif;
+            background-color: #555655;
+            background-size: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #959a95;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            max-width: 400px;
+            box-shadow: 0px 0px 5px 1px rgb(82, 211, 240);
+            align-items: center;
+        }
+
+        .container h1 {
+            margin-bottom: 20px;
+            color: rgb(238, 238, 233);
+            text-shadow: 2px 2px 4px #000000;
+        }
+
+        .input-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .input-row input[type="submit"] {
+            background-color: #18e1d1;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border-radius: 5px;
+            width: 70px;
+            height: 50px;
+            margin-right: 20px;
+        }
+
+        .input-row input[type="submit"]:hover {
+            background-color: #059a95;
+        }
+
+        input[name="total"] {
+            width: 100px;
+            height: 50px;
+        }
+
+        input[name="expresion"] {
+            width: 250px;
+            height: 50px;
+        }
+    </style>
+    <title>Calculadora</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<body>
+    <form action="calc">
+        <div class="container">
+            <h1>Calcular</h1><br>
+            <div class="input-row">
+                <input type="text" name="currval" th:value="${currval}" readonly>
+                <input type="text" name="op" th:value="${op}" readonly>
+            </div>
+            <div class="input-row">
+                <input type="submit" name="number" value="7" formaction="/calc?number=7">
+                <input type="submit" name="number" value="8" formaction="/calc?number=8">
+                <input type="submit" name="number" value="9" formaction="/calc?number=9">
+                <input type="submit" name="operator" value="+" formaction="/operador?operator=%2B">
+            </div> 
+            <div class="input-row">
+                <input type="submit" name="number" value="4" formaction="/calc?number=4">
+                <input type="submit" name="number" value="5" formaction="/calc?number=5">
+                <input type="submit" name="number" value="6" formaction="/calc?number=6">
+                <input type="submit" name="operator" value="-" formaction="/operador?operator=-">
+            </div>
+            <div class="input-row">
+                <input type="submit" name="number" value="1" formaction="/calc?number=1">
+                <input type="submit" name="number" value="2" formaction="/calc?number=2">
+                <input type="submit" name="number" value="3" formaction="/calc?number=3">
+                <input type="submit" name="operator" value="*" formaction="/operador?operator=*">
+            </div>
+            <div class="input-row">
+                <input type="submit" name="number" value="0" formaction="/calc?number=0">
+                <input type="submit" name="number" value="/" formaction="/operador?operator=/">
+                <input type="submit" name="number" value="ac" formaction="/clean">
+                <input type="submit" name="operator" value="=" formaction="/calc">
+            </div>
+    </form>
+</body>
+</html>

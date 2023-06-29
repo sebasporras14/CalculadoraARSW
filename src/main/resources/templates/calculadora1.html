@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div class="main">
+    </div>
+    <form action="add">
+        <input type="type" name="number" th:value="${currval}">
+        <input type ="submit" name="add" value="+">
+        <input type ="submit" name="sub" value="-" formaction="sub">
+        <input type ="submit" value="/" formaction="div">
+        <input type="submit" value="*" formaction="mult">
+        <input type="submit" value="AC" formaction="clean1">
+    </form>
+</html>
