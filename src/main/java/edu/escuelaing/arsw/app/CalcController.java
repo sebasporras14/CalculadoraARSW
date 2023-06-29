@@ -78,20 +78,10 @@ class CalcController {
 		model.addAttribute("op", op.getCurrentValue());
 		return "calculadora";
 	}
-	/* 
 	@GetMapping("/calc")
-	public String defaulCalc() {
-		if (op.getCurrentValue().equals("+")) {
-			add(valor, operacion, model);
-		} else if (op.getCurrentValue().equals("-")) {
-			sub(valor, operacion, model);
-		} else if (op.getCurrentValue().equals("*")) {
-			mult(valor, operacion, model);
-		} else if (op.getCurrentValue().equals("/")) {
-			div(valor, operacion, model);
-		}
+	public String defaulCalc(){
 		return "calculadora";
-	}*/
+	}
 	@GetMapping("/calc1")
 	public String defaulCalc1(){
 		return "calculadora1";
